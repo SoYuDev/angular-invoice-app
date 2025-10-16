@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from '../../services/invoice.service';
+import { Invoice } from '../../model/invoice';
 
 @Component({
   selector: 'app-invoice',
@@ -7,6 +9,17 @@ import { Component } from '@angular/core';
   templateUrl: './invoice.component.html',
   styleUrl: './invoice.component.css'
 })
-export class InvoiceComponent {
+export class InvoiceComponent implements OnInit {
+
+  invoice!: Invoice;
+
+  // Dependency Injection -- InvoiceService
+  constructor(private service: InvoiceService) {
+
+  }
+
+  ngOnInit(): void {
+    this.invoice = this.service.getInvoice();
+  }
 
 }

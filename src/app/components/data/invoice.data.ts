@@ -21,7 +21,7 @@ export const invoiceData: Invoice = {
     items: [
         {
             id: 1,
-            productName: 'Dummy Product Name',
+            productName: 'Razer Mouse',
             price: 1000,
             quantity: 2
         },
