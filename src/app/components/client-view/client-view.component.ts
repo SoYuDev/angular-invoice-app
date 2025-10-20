@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Client } from '../../model/client';
 
 @Component({
   selector: 'app-client-view',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './client-view.component.css'
 })
 export class ClientViewComponent {
+
+  @Input() client!: Client;
 
 }
