@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card my-5">
+    <div class="card-header">
+      <h2>Invoice example</h2>
+    </div>
+    <div class="card-body">
+
+      <!-- INVOICE'S DATA -->
+      <!-- Inyección de subcomponente donde pasamos los valores del componente padre (invoice.component) al hijo (invoice-view.component) -->
+      <app-invoice-view [id] = "invoice.id" [name] = "invoice.name"></app-invoice-view>
+
+      <div class="row my-3">
+        <div class="col">
+          <!-- CLIENT'S DATA -->
+          <!-- Inyección de subcomponente onde pasamos el valor del atributo cliente del componente padre al atributo cliente del componente hijo -->
+          <app-client-view [client] = "invoice.client"></app-client-view>
+        </div>
+
+        <div class="col">
+          <!-- COMPANY'S DATA -->
+          <app-company-view [company] = "invoice.company"></app-company-view>
+        </div>
+      </div>
+      <!-- INVOICE DETAILS (TABLE) -->
+      <app-table-component [items]="invoice.items"></app-table-component>
+
+      <!-- TOTAL -->
+      <app-total [total]="invoice.total"></app-total>
+      
+    
+    </div>
+  </div>
+</div>
