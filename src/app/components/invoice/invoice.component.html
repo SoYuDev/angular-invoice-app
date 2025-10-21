@@ -22,7 +22,11 @@
         </div>
       </div>
       <!-- INVOICE DETAILS (TABLE) -->
-      <app-list-items [items]="invoice.items"></app-list-items>
+      <app-table-component [items]="invoice.items"></app-table-component>
+
+      <!-- TOTAL -->
+      <app-total [total]="invoice.total"></app-total>
+      
     
     </div>
   </div>
