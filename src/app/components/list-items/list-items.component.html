@@ -7,12 +7,16 @@
       <th>product</th>
       <th>price</th>
       <th>quantity</th>
+      <th>remove</th>
     </tr>
   </thead>
 
   <tbody>
     @for (item of items; track $index) {
-        <tr app-row-item [item] = "item"></tr>
+      <!-- Los [] representan entrada de datos, estamos recibiendo el valor "item" del padre y se lo pasamos al atributo item del hijo.
+      Los () representan salida de datos del hijo al padre (output) pasamos el valor que hay dentro del removeEventEmitter() del hijo y se lo pasamos al padre
+      que llamará al método onRemove() donde $event es el valor que estamos pasando, en este caso el id. -->
+        <tr app-row-item [item] = "item" (removeEventEmitter)="onRemove($event)"></tr>
     }
   </tbody>
 </table>

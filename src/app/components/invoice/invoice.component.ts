@@ -26,4 +26,9 @@ export class InvoiceComponent implements OnInit {
     this.invoice = this.service.getInvoice();
   }
 
+  // Comprobamos cual es el id que hemos ido recibiendo de los hijos, iteramos los arrays y si detecta que el id es igual, lo borra.
+  removeItem(id:number) {
+    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+  }
+
 }
