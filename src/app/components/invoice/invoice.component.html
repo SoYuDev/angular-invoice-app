@@ -20,6 +20,8 @@
           <app-company-view [company]="invoice.company"></app-company-view>
         </div>
       </div>
+      <!-- INVOICE DETAILS (TABLE) -->
+      <app-table-component [items]="invoice.items"></app-table-component>
 
       <!-- TABLE -->
       <app-list-items [items]="invoice.items" (removeEventEmitter)="removeItem($event)"></app-list-items>

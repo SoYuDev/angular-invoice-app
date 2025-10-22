@@ -11,6 +11,7 @@ export class InvoiceService {
 
   constructor() {}
 
+  // Calcula el valor total del item, crea una instancia nueva a partir del recibo y le añadimos el valor del método calculateTotal() al atributo total
   getInvoice(): Invoice {
     const total = this.calculateTotal();
     // ... crea una copia de la instancia, en este caso una copia del atributo invoice.
