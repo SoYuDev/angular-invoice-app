@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card my-5">
+    <div class="card-header">
+      <h2>Invoice example</h2>
+    </div>
+    <div class="card-body">
+
+      <!-- INVOICE DATA -->
+      <!-- Paso de información: hacemos que el atributo id del componente invoice-view lo recoja a partir del atributo de este componente (invoice.id) -->
+      <app-invoice-view [id]="invoice.id" [name] = "invoice.name"></app-invoice-view>
+
+      <div class="row my-3">
+        <div class="col">
+          <!-- CLIENTS DATA -->
+          <app-client-view [client]="invoice.client"></app-client-view>
+        </div>
+
+        <div class="col">
+          <!-- COMPANY DATA -->
+          <app-company-view [company]="invoice.company"></app-company-view>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <app-list-items [items]="invoice.items" (removeEventEmitter)="removeItem($event)"></app-list-items>
+
+      <!-- TOTAL PRICE OF THE ITEMS -->
+      <app-total [total]="invoice.total"></app-total>
+
+    </div>
+  </div>
+</div>

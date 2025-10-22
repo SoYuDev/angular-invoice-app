@@ -1,0 +1,6 @@
+<td>{{ item.id }}</td>
+<td>{{ item.productName }}</td>
+<td>{{ item.price }}</td>
+<td>{{ item.quantity }}</td>
+<!-- Cuando demos click invocamos al método de la clase RowItemComponent onRemove() -->
+<td><button class="btn btn-danger btn-sm" (click)="onRemove(item.id)">Remove</button></td>
